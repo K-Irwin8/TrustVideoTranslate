@@ -31,7 +31,7 @@ export function LandingPageComponent() {
       <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
         <div className="container mx-auto flex justify-between items-center p-4">
           <div className="flex items-center">
-            <Image src="/placeholder.svg?height=40&width=100" width={100} height={40} alt="LOGO ロゴ" className="mr-2" />
+            <Image src="/placeholder.svg?height=40&width=100" width={100} height={40} alt="Rask ロゴ" className="mr-2" />
           </div>
           <div>
             <Link href="/login" className="text-gray-600 hover:text-gray-900 mr-4">
@@ -98,19 +98,84 @@ export function LandingPageComponent() {
           </div>
         </section>
 
-        {[1, 2, 3].map((index) => (
-          <section key={index} className="min-h-screen flex items-center justify-center p-4">
-            <div className="w-full h-full max-w-6xl max-h-[80vh]">
-              <Image
-                src={`/placeholder.svg?height=1080&width=1920&text=Figma+Image+${index}`}
-                width={1920}
-                height={1080}
-                alt={`Figma Image ${index}`}
-                className="w-full h-full object-contain"
-              />
+        <section className="min-h-screen flex items-center justify-center bg-white p-8">
+          <div className="max-w-6xl w-full">
+            <h2 className="text-3xl font-bold text-center mb-4">
+              最先端のAI技術と翻訳の専門性が融合
+            </h2>
+            <h1 className="text-5xl font-bold text-center mb-12">
+              DMM動画翻訳 3つの強み
+            </h1>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-gray-100 p-6 rounded-lg">
+                <h3 className="text-2xl font-bold mb-4">プロ級の品質：AIが実現する高精度翻訳</h3>
+                <p className="text-lg mb-4">
+                  DMM動画翻訳は、最先端のAI技術を駆使して、人間の翻訳者に匹敵する高品質な翻訳を提供します。
+                  単なる機械翻訳を超え、文脈や業界特有の表現を理解し、自然で流暢な翻訳を実現します。
+                </p>
+                <div className="bg-white p-4 rounded-lg mb-4">
+                  <p className="font-bold mb-2">翻訳例：</p>
+                  <p className="mb-2">原文：「猫に小判」</p>
+                  <p className="mb-2">一般的な機械翻訳：「Coins for cats」</p>
+                  <p className="text-[#0000FF] font-bold">DMM AI翻訳：「Pearls before swine」</p>
+                </div>
+                <p className="text-sm text-gray-600">
+                  DMM AIは単なる直訳ではなく、適切な英語の慣用句に置き換えることで、
+                  元の文の真意を正確に伝えることができます。
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4">AIと人間の専門家のベストミックス</h3>
+                <p className="text-lg mb-4">
+                  DMM動画翻訳サービスは、高度なAI技術と経験豊富な翻訳専門家のノウハウを組み合わせています。
+                  AIが高速で正確な翻訳の下地を作り、人間の専門家がその品質をさらに向上させます。
+                  これにより、スピードと品質の両立を実現し、従来の翻訳サービスでは不可能だった
+                  高品質かつ迅速な翻訳サービスを提供しています。
+                </p>
+                <ul className="list-disc list-inside text-lg">
+                  <li>業界特化の専門用語に対応</li>
+                  <li>文化的なニュアンスを的確に翻訳</li>
+                  <li>ブランドの声を維持しつつローカライズ</li>
+                </ul>
+              </div>
             </div>
-          </section>
-        ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">翻訳にかかるコストを圧縮</h3>
+                <p className="text-lg mb-4">
+                  DMM動画翻訳サービスは、従来の人力翻訳と比較して大幅なコスト削減を実現しました。これまで高額な翻訳費用がネックで多言語展開を断念されていた方も、グローバル展開が可能になります。
+                </p>
+                <p className="text-sm text-gray-600">
+                  ※一部の機能のみ無料でお試しいただけます。
+                </p>
+              </div>
+              <div className="flex items-end justify-center">
+                <Image
+                  src="/placeholder.svg?height=300&width=400"
+                  width={400}
+                  height={300}
+                  alt="コスト削減チャート"
+                  className="w-full h-auto"
+                  id="cost-reduction-chart"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex justify-center items-center">
+                <Image src="/placeholder.svg?height=200&width=300" width={300} height={200} alt="翻訳プロセス" className="mx-auto" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4">圧倒的な翻訳スピード</h3>
+                <p className="text-lg">
+                  DMM独自のAI技術を活用し、超高速処理を実現しました。字幕制作や音声吹き替えをスピーディに安く提供することで、他社にリリースされるコンテンツを追随出来ず遅れを取っていた、世界に向けたコンテンツを送り出す支援をします。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="container mx-auto px-4">
@@ -150,7 +215,7 @@ export function LandingPageComponent() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">会社名について</h3>
+              <h3 className="text-lg font-semibold mb-4">Raskについて</h3>
               <ul className="space-y-2">
                 <li><Link href="/about">会社概要</Link></li>
                 <li><Link href="/careers">採用情報</Link></li>
@@ -177,11 +242,11 @@ export function LandingPageComponent() {
               <h3 className="text-lg font-semibold mb-4">お問い合わせ</h3>
               <p>〒100-0005 東京都千代田区丸の内1-1-1</p>
               <p>電話: 03-1234-5678</p>
-              <p>メール: info@COMPANYEMAIL.ai</p>
+              <p>メール: info@rask.ai</p>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-            <p>&copy; 2024 COMPANY. All rights reserved.</p>
+            <p>&copy; 2024 Rask AI. All rights reserved.</p>
           </div>
         </div>
       </footer>
