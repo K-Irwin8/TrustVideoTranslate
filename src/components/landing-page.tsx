@@ -1,3 +1,6 @@
+// THIS IS THE FINISHED VERSION FOR - HAS LOG IN - HAS 料金プラン for free and 2C customers etc. THE NEXT UPDATED VERSION IS FOR THE 受託 only phase
+
+
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
