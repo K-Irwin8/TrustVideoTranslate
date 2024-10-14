@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
-export function LandingPageComponent() {
+export function LandingPageComponent() { 
   const [videoHeight, setVideoHeight] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -38,11 +38,14 @@ export function LandingPageComponent() {
             <Image src="/trustVideoTranslateLogo.svg" width={180} height={72} alt="company ロゴ" className="mr-2" />
           </div>
           <div>
-            <Link href="/login" className="text-gray-600 hover:text-gray-900 mr-4">
+            {/*<Link href="/login" className="text-gray-600 hover:text-gray-900 mr-4">
               ログイン
-            </Link>
-            <Button asChild className="bg-[#0000FF] text-white hover:bg-blue-700">
+            </Link>*/}
+            {/*<Button asChild className="bg-[#0000FF] text-white hover:bg-blue-700">
               <Link href="/try-free">無料で始める</Link>
+            </Button>*/}
+            <Button asChild variant="outline" className="bg-[#0000FF] text-white text-xl px-8 py-4 rounded-md hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                <Link href="/pdf-for-contact/salespitchv1.pdf">お問い合わせ</Link>
             </Button>
           </div>
         </div>
@@ -65,11 +68,14 @@ export function LandingPageComponent() {
             <h1 className="text-5xl md:text-6xl font-bold mb-8">プロ級の翻訳を数分で</h1>
 
             <div className="flex justify-center space-x-4 mb-8">
-              <Button asChild className="bg-[#0000FF] text-white text-xl px-8 py-4 rounded-md hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+              {/*<Button asChild className="bg-[#0000FF] text-white text-xl px-8 py-4 rounded-md hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
                 <Link href="/try-free">無料で始める</Link>
-              </Button>
-              <Button asChild variant="outline" className="text-[#0000FF] border-[#0000FF] text-xl px-8 py-4 rounded-md hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+              </Button>*/}
+              {/*<Button asChild variant="outline" className="text-[#0000FF] border-[#0000FF] text-xl px-8 py-4 rounded-md hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
                 <Link href="/contact">お問い合わせ</Link>
+              </Button>*/}
+              <Button asChild variant="outline" className="bg-[#0000FF] text-white text-xl px-8 py-4 rounded-md hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                <Link href="/pdf-for-contact/salespitchv1.pdf">お問い合わせ</Link>
               </Button>
             </div>
 
@@ -191,9 +197,9 @@ export function LandingPageComponent() {
             <h2 className="text-4xl font-bold text-center mb-12">料金プラン</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: "無料プラン", price: "¥0/分", features: ["基本機能", "5分/月の翻訳", "3言語サポート"] },
-                { title: "プロプラン", price: "¥600/分", features: ["すべての機能", "60分/月の翻訳", "10言語サポート", "優先サポート"] },
-                { title: "エンタープライズ", price: "お問い合わせ", features: ["カスタマイズ可能", "無制限の翻訳", "すべての言語サポート", "専属サポート"] }
+                { title: "字幕翻訳プラン", price: "¥800/分", features: ["1営業日で納品", "プロの翻訳家による字幕修正可能(別料金)", "日本語、英語対応"] },
+                { title: "動画吹替β版", price: "¥1100/分", features: ["1営業日で納品", "日本語、英語対応"] },
+                { title: "字幕翻訳+動画吹替β版", price: "¥1500/分", features: ["1営業日で納品", "日本語、英語対応"] }
               ].map((plan, index) => (
                 <Card key={index} className="flex flex-col">
                   <CardHeader>
@@ -209,9 +215,9 @@ export function LandingPageComponent() {
                         </li>
                       ))}
                     </ul>
-                    <Button className={index === 1 ? "bg-[#0000FF] hover:bg-blue-700" : "bg-gray-800 hover:bg-gray-700"}>
+                    {/*<Button className={index === 1 ? "bg-[#0000FF] hover:bg-blue-700" : "bg-gray-800 hover:bg-gray-700"}>
                       選択する
-                    </Button>
+                    </Button>*/}
                   </CardContent>
                 </Card>
               ))}
