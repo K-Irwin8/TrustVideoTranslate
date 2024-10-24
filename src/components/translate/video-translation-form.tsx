@@ -8,6 +8,7 @@ export function VideoTranslationForm() {
   const [sourceLanguage, setSourceLanguage] = useState('')
   const [targetLanguage, setTargetLanguage] = useState('')
   const [title, setTitle] = useState('')
+  const [email, setEmail] = useState('')
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
@@ -24,9 +25,37 @@ export function VideoTranslationForm() {
     }
   }
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (!file) {
+      alert('Please upload a video file.')
+      return
+    }
+
+  const formData = new FormData()
+    formData.append('file', file as File)
+    formData.append('email', email)
+    formData.append('sourceLanguage', sourceLanguage)
+    formData.append('targetLanguage', targetLanguage)
+    formData.append('title', title)
+
+    try {
+        const response = await fetch('http://localhost:5001/upload', {
+          method: 'POST',
+          body: formData,
+        })
+        const result = await response.json()
+        alert(result.message || 'An error occurred.')
+      } catch (error) {
+        console.error('Error:', error)
+        alert('An error occurred while uploading the file.')
+      }
+  }
+    
+
   const languages = [
-    { value: 'ja', label: '日本語' },
-    { value: 'en', label: '英語' },
+    { value: 'japanese', label: '日本語' },
+    { value: 'english', label: '英語' },
     { value: 'zh', label: '中国語' },
     { value: 'fr', label: 'フランス語' },
     { value: 'es', label: 'スペイン語' },
@@ -36,7 +65,7 @@ export function VideoTranslationForm() {
   return (
     <div className="min-h-screen bg-white p-8">
       <h1 className="text-3xl font-bold text-center mb-8 text-blue-600">TRUST 動画翻訳</h1>
-      <form className="max-w-2xl mx-auto space-y-6">
+      <form className="max-w-2xl mx-auto space-y-6" onSubmit={handleSubmit}>
         <div
           onDrop={handleDrop}
           onDragOver={(e) => e.preventDefault()}
@@ -129,10 +158,10 @@ export function VideoTranslationForm() {
             メールアドレス
           </label>
           <input
-            type="text"
-            id="video-title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            type="email"
+            id="user-email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             placeholder="送信先のメールアドレスを入力してください"
           />
