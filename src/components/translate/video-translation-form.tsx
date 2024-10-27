@@ -40,7 +40,7 @@ export function VideoTranslationForm() {
     formData.append('title', title)
 
     try {
-        const response = await fetch('http://localhost:5001/upload', {
+        const response = await fetch('https://trustvideotranslate-32d52a4f732e.herokuapp.com/upload', {
           method: 'POST',
           body: formData,
         })
