@@ -40,7 +40,7 @@ export function VideoTranslationForm() {
     formData.append('title', title)
 
     try {
-        const response = await fetch('https://trustvideotranslate-32d52a4f732e.herokuapp.com/upload', {
+        const response = await fetch('https://api.trustvideotranslate.com/upload', {
           method: 'POST',
           body: formData,
         })
@@ -117,7 +117,7 @@ export function VideoTranslationForm() {
 
         <div className="space-y-2">
           <label htmlFor="target-language" className="block text-sm font-medium text-gray-700">
-            翻訳先の言語
+            翻訳する言語
           </label>
           <div className="relative">
             <select
