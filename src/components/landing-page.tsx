@@ -85,9 +85,11 @@ export function LandingPageComponent() {
                   <video
                     className="w-full h-full object-cover rounded-lg"
                     controls
+                    autoPlay
+                    muted
                     poster="/placeholder.svg?height=360&width=640"
                   >
-                    <source src="/path-to-your-original-video.mp4" type="video/mp4" />
+                    <source src="Matthew-McConaughey-original.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -101,9 +103,11 @@ export function LandingPageComponent() {
                   <video
                     className="w-full h-full object-cover rounded-lg"
                     controls
+                    autoPlay
+                    muted
                     poster="/placeholder.svg?height=360&width=640"
                   >
-                    <source src="/path-to-your-translated-video.mp4" type="video/mp4" />
+                    <source src="Matthew-McConaughey-translation.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
